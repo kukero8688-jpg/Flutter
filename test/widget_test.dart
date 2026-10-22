@@ -4,29 +4,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_appl_1/main.dart';
 
 void main() {
-  testWidgets('Browse image page displays and switches images', (
+  testWidgets('Image picker page displays its controls', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const MyApp());
 
-    Finder imageAsset(String assetName) {
-      return find.byWidgetPredicate(
-        (widget) =>
-            widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName == assetName,
-      );
-    }
-
-    expect(find.text('Browse Image 1'), findsOneWidget);
-    expect(imageAsset('assets/images/1.png'), findsOneWidget);
-
-    await tester.tap(find.byType(IconButton).last);
-    await tester.pump();
-    expect(imageAsset('assets/images/2.png'), findsOneWidget);
-
-    await tester.tap(find.byType(IconButton).first);
-    await tester.pump();
-    expect(imageAsset('assets/images/1.png'), findsOneWidget);
+    expect(find.text('挑選照片'), findsOneWidget);
+    expect(find.text('相機快照'), findsOneWidget);
+    expect(find.text('挑選相簿照片'), findsOneWidget);
+    expect(find.text('沒有照片'), findsOneWidget);
   });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '1022-BrowseImage1.dart' as browse_image;
+import '1022-ImagePicker.dart' as image_picker;
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dropdown Menu Button',
+      title: 'Image Picker',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const browse_image.MyHomePage(),
+      home: const image_picker.MyHomePage(),
     );
   }
 }
