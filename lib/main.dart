@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '1014Textfield_body.dart' show AppBody;
+import '1022-BrowseImage1.dart' as browse_image;
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Dropdown Menu Button')),
-        body: const AppBody(),
-      ),
+      home: const browse_image.MyHomePage(),
     );
   }
 }
