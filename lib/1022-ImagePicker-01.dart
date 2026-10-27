@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Image Picker',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHomePage(),
-    );
+      home: const MyHomePage(),
+    ); // MaterialApp
   }
 }
 
@@ -31,7 +30,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final ValueNotifier<XFile?> _imageFile = ValueNotifier(null);
   final ImagePicker _imagePicker = ImagePicker();
-
   @override
   void dispose() {
     _imageFile.dispose();
@@ -48,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       child: const Text(
-        '相機快照',
+        '相機拍照',
         style: TextStyle(fontSize: 18, color: Colors.white),
       ), // Text
     ); // ElevatedButton
@@ -94,12 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
       _imageFile.value = file;
     }
   }
+}
 
-  Widget _imageBuilder(BuildContext context, XFile? imageFile, Widget? child) {
-    if (imageFile == null) {
-      return const Text('沒有照片', style: TextStyle(fontSize: 20));
-    }
-
-    return Image.file(File(imageFile.path), fit: BoxFit.contain);
+Widget _imageBuilder(BuildContext context, XFile? imageFile, Widget? child) {
+  if (imageFile == null) {
+    return const Text('沒有照片', style: TextStyle(fontSize: 20));
   }
+
+  return Image.file(File(imageFile.path), fit: BoxFit.contain);
 }
