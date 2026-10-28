@@ -12,35 +12,50 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('登入頁面'),
-        backgroundColor: Colors.amber),
+        appBar: AppBar(
+          title: const Text('登入頁面'),
+          backgroundColor: Colors.amber,
+        ),
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-          children: [
-          const Text('登入頁面',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
-          ), 
-          const SizedBox(height: 10),
-          const Text('請輸入帳號及密碼'),
-          const SizedBox(
-            width: 250,
-            child: TextField(
-              decoration: InputDecoration(
-                labelText: '帳號',
-                border: OutlineInputBorder(),
+            children: [
+              const Text(
+                '登入頁面',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-            ),
+              const SizedBox(height: 10),
+              const Text('請輸入帳號及密碼'),
+              const SizedBox(
+                width: 250,
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: '帳號',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              const SizedBox(
+                width: 250,
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: '密碼',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  print('使用者按下登入');
+                },
+                child: const Text('登入'),
+              ),
+            ],
           ),
-          
-
-
-         ],
-        ), 
-       ),
+        ),
       ),
     );
   }
