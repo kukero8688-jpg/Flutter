@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Second Page'), backgroundColor: Colors.amber),
+      backgroundColor: const Color(0xFFDCDCDC),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsetsGeometry.all(30),
+          child: ElevatedButton(
+            onPressed: () => Navigator.pop(context), 
+            child: const Text('回上一頁'),
+          ),
+        ),
+      ),
+    );
+  } 
+}
+
