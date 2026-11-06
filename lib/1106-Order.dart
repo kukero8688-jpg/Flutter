@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/20261106_OrderSelectMainCourse.dart';
-import 'package:flutter_app_1/20261106_OrderSelectDrink.dart';
+import 'package:flutter_appl_1/1106-OrderSelectMainCourse.dart';
+import 'package:flutter_appl_1/1106-OrderSelectDrink.dart';
 void main() {
   runApp(const MyApp());
 }
