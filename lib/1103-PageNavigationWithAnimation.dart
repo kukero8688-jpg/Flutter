@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/20261103_PageNavigationWithAnimation_SecondPage.dart';
+import 'package:flutter_appl_1/1103-PageNavigationWithAnimation_SecondPage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key}); 
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,32 +32,34 @@ class MyHomePage extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
-                context, 
+                context,
                 PageRouteBuilder(
                   transitionDuration: const Duration(milliseconds: 300),
-                  pageBuilder: (context, animation, secondrayAnimatioin) {
+                  pageBuilder: (context, animation, secondaryAnimation) {
                     return const SecondPage();
                   },
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    final offsetAnimation = Tween<Offset>(
-                      begin: const Offset(1, 0),
-                      end: Offset.zero,
-                    ).animate(animation);
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                        final offsetAnimation = Tween<Offset>(
+                          begin: const Offset(1, 0),
+                          end: Offset.zero,
+                        ).animate(animation);
 
-                    return SlideTransition(
-                      position: offsetAnimation,
-                      child: child,
-                    );
-                  },
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
                 ),
               );
-            }, 
-            child: const Text('Open Second Page', style: TextStyle(fontSize: 18)),
+            },
+            child: const Text(
+              'Open Second Page',
+              style: TextStyle(fontSize: 18),
+            ),
           ),
         ),
       ),
     );
   }
-
-        
 }

@@ -20,4 +20,3 @@ class SecondPage extends StatelessWidget {
     );
   } 
 }
-

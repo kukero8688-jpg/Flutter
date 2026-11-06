@@ -10,7 +10,7 @@ class SecondPage extends StatelessWidget {
       backgroundColor: const Color(0xFFDCDCDC),
       body: Center(
         child: Padding(
-          padding: const EdgeInsetsGeometry.all(30),
+          padding: const EdgeInsets.all(30),
           child: ElevatedButton(
             onPressed: () => Navigator.pop(context), 
             child: const Text('回上一頁'),
@@ -20,4 +20,3 @@ class SecondPage extends StatelessWidget {
     );
   } 
 }
-

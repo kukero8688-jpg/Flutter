@@ -151,8 +151,6 @@ class AppBody extends StatelessWidget {
                 ),
               ),
             ),
-
-            
           ],
         ),
       ),
