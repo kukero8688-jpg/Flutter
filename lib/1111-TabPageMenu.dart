@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,17 +26,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final ValueNotifier<String> _messageNotifier = ValueNotifier<String>('請從左側選單選擇項目');
+  final ValueNotifier<String> _messageNotifier = ValueNotifier<String>(
+    '請從左側選單選擇項目',
+  );
 
   final List<String> _menuItems = const ['選項一', '選項二', '選項三'];
 
   @override
-  void dispose(){
+  void dispose() {
     _messageNotifier.dispose();
     super.dispose();
   }
 
-  void _selectMenuItem(String item){
+  void _selectMenuItem(String item) {
     _messageNotifier.value = item;
     Navigator.pop(context);
   }
@@ -55,24 +58,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 20.0, color: Colors.white),
               ),
             ),
-            for (final item in _menuItems)ListTile(
-              title: Text(item, style: const TextStyle(fontSize: 20.0)),
-              onTap: () => _selectMenuItem(item),
-            ),
+            for (final item in _menuItems)
+              ListTile(
+                title: Text(item, style: const TextStyle(fontSize: 20.0)),
+                onTap: () => _selectMenuItem(item),
+              ),
           ],
         ),
       ),
 
       body: Center(
         child: ValueListenableBuilder<String>(
-          valueListenable: _messageNotifier, 
+          valueListenable: _messageNotifier,
           builder: (context, value, child) {
             return Text(value, style: TextStyle(fontSize: 20.0));
-          }
+          },
         ),
       ),
-    );  
+    );
   }
 }
-
-
